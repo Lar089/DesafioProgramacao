@@ -8,13 +8,13 @@ import view.screen.LadderScreen;
 
 public class LadderController {
     LadderService service = new LadderService();
-    LadderScreen screen = new LadderScreen();
     Restriction restriction = new Restriction();
+    LadderScreen screen = new LadderScreen();
 
     public LadderController(String n){
         int value = service.ValueConvert(n);
-        String result = restriction.RestrictionLadder(value);
-        if(result.equals(Message.SUCCESS.getMessage()) ) {
+        Message message = restriction.RestrictionLadder(value);
+        if(message.equals(Message.SUCCESS) ) {
             LadderModel ladder = new LadderModel(value);
             ladder.setResult(service.Matrix(ladder.getN()));
             screen.Result(ladder);

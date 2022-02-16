@@ -19,7 +19,7 @@ public class LadderScreen implements IMenu {
             System.out.println("Informe o tamanho da Escada:");
             option = Integer.parseInt(read.nextLine());
 
-            if(option > 0)
+            if(option != 0)
                 return "" + option;
 
         } while (option != 0);

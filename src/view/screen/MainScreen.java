@@ -2,6 +2,7 @@ package view.screen;
 
 import controller.LadderController;
 import view.interfaces.IMenu;
+import view.messages.Message;
 
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class MainScreen implements IMenu {
             option = Integer.parseInt(read.nextLine());
             OptionMenu(option);
         } while (option != 0);
-        return "Obrigado por utilizar está ferramenta!";
+        return Message.BYE.getMessage();
 
     }
 
@@ -40,13 +41,11 @@ public class MainScreen implements IMenu {
             controllerLadder =  new LadderController(input);
         }
         if (value == 2) {
-
         }
         if (value == 3) {
-
         }
         if (value > 3 || value < 0) {
-            System.out.println("ERRO: Valor incorreto, tente novamente!");
+            System.out.println(Message.ERROR.getMessage() + " " + Message.TRY_AGAIN.getMessage());
         }
     }
 }

@@ -4,7 +4,8 @@ public enum Message {
     SUCCESS("Operação realizada com sucesso!"),
     ERROR("Valor de entrada inválida!"),
     TRY_AGAIN("Tente novamente!"),
-    RESULT("Resultado");
+    RESULT("Resultado"),
+    BYE("Obrigado por utilizar está ferramenta!");
 
     private String message;
 
