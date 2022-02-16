@@ -44,10 +44,5 @@ public class LadderModel {
         this.result = result;
     }
 
-    public String validate(){
-        if(n <= 0)
-            return "NAO_VALIDO";
-        return "VALIDO";
-    }
 
 }

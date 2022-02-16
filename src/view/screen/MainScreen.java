@@ -1,11 +1,13 @@
 package view.screen;
 
+import controller.LadderController;
 import view.interfaces.IMenu;
 
 import java.util.Scanner;
 
 public class MainScreen implements IMenu {
-    LadderScreen screen = new LadderScreen();
+    LadderScreen screenLadder = new LadderScreen();
+    LadderController controllerLadder;
 
     public MainScreen() {
         super();
@@ -34,8 +36,8 @@ public class MainScreen implements IMenu {
 
     private void OptionMenu(int value) {
         if (value == 1) {
-            String input = screen.ShowMenu();
-
+            String input = screenLadder.ShowMenu();
+            controllerLadder =  new LadderController(input);
         }
         if (value == 2) {
 
