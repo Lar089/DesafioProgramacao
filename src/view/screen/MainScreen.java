@@ -1,6 +1,7 @@
 package view.screen;
 
 import controller.LadderController;
+import controller.PasswordController;
 import view.interfaces.IMenu;
 import view.messages.Message;
 
@@ -9,6 +10,9 @@ import java.util.Scanner;
 public class MainScreen implements IMenu {
     LadderScreen screenLadder = new LadderScreen();
     LadderController controllerLadder;
+
+    PasswordScreen screenPassword = new PasswordScreen();
+    PasswordController controllerPassword;
 
     public MainScreen() {
         super();
@@ -38,9 +42,11 @@ public class MainScreen implements IMenu {
     private void OptionMenu(int value) {
         if (value == 1) {
             String input = screenLadder.ShowMenu();
-            controllerLadder =  new LadderController(input);
+            controllerLadder = new LadderController(input);
         }
         if (value == 2) {
+            String input = screenPassword.ShowMenu();
+            controllerPassword = new PasswordController(input);
         }
         if (value == 3) {
         }

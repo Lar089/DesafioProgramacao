@@ -10,12 +10,13 @@ public class LadderController {
     LadderService service = new LadderService();
     Restriction restriction = new Restriction();
     LadderScreen screen = new LadderScreen();
+    LadderModel ladder;
 
     public LadderController(String n){
         int value = service.ValueConvert(n);
         Message message = restriction.RestrictionLadder(value);
         if(message.equals(Message.SUCCESS) ) {
-            LadderModel ladder = new LadderModel(value);
+            ladder = new LadderModel(value);
             ladder.setResult(service.Matrix(ladder.getN()));
             screen.Result(ladder);
         }
