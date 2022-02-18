@@ -17,6 +17,16 @@ forte. O site considera uma senha forte quando ela satisfaz os seguintes critér
 ● Contém no mínimo 1 letra em maiúsculo.
 ● Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+
 
+Entrada:
+Ya3
+Saída:
+3
+
+Explicação:
+Ela pode tornar a senha segura adicionando 3 caracteres, por exemplo, &ab, transformando
+a senha em Ya3&ab. 2 caracteres não são suficientes visto que a senha precisa ter um tamanho
+mínimo de 6 caracteres.
+
  */
 public class PasswordModel {
     private String password;

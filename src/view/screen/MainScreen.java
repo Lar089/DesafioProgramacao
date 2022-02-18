@@ -1,5 +1,6 @@
 package view.screen;
 
+import controller.AnagramController;
 import controller.LadderController;
 import controller.PasswordController;
 import view.interfaces.IMenu;
@@ -13,6 +14,9 @@ public class MainScreen implements IMenu {
 
     PasswordScreen screenPassword = new PasswordScreen();
     PasswordController controllerPassword;
+
+    AnagramScreen screenAnagram = new AnagramScreen();
+    AnagramController controllerAnagram;
 
     public MainScreen() {
         super();
@@ -36,7 +40,6 @@ public class MainScreen implements IMenu {
             OptionMenu(option);
         } while (option != 0);
         return Message.BYE.getMessage();
-
     }
 
     private void OptionMenu(int value) {
@@ -49,6 +52,8 @@ public class MainScreen implements IMenu {
             controllerPassword = new PasswordController(input);
         }
         if (value == 3) {
+            String input = screenAnagram.ShowMenu();
+            controllerAnagram = new AnagramController(input);
         }
         if (value > 3 || value < 0) {
             System.out.println(Message.ERROR.getMessage() + " " + Message.TRY_AGAIN.getMessage());

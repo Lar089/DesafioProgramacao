@@ -11,18 +11,20 @@ public class PasswordController {
     PasswordModel password;
 
     public PasswordController(String word){
-        password = new PasswordModel(word);
+        if(!word.equals("0")) {
+            password = new PasswordModel(word);
 
-        int length = service.PasswordLength(word);
-        int result = 0;
+            int length = service.PasswordLength(word);
+            int result = 0;
 
-        for (int i = 0;i < length; i++){
-            char charA = word.charAt(i);
-            result += service.RestrictionPassword(charA);
+            for (int i = 0; i < length; i++) {
+                char charA = word.charAt(i);
+                result += service.RestrictionPassword(charA);
+            }
+
+            password.setResult(service.Result(result, length));
+            screen.Result(password);
         }
-
-        password.setResult(service.Result(result, length));
-        screen.Result(password);
     }
 
 }

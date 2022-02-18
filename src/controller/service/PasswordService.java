@@ -42,8 +42,8 @@ public class PasswordService {
     }
 
     public int Result(int value, int length) {
-        int auxLength = 6 - length;
-        int auxValue = 4 - value;
+        int auxLength = 6 - length;//6 tamanho minimo da senha
+        int auxValue = 4 - value;//4 quantidade de criterios da senha
 
         if (length < 6) {
             if(auxLength <= auxValue){
